@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML & CSS Cheatsheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fdfdfd;
+        color: #2c3e50;
+        padding: 2rem;
+        line-height: 1.6;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 2rem 0 1rem;
+        color: #34495e;
+        border-bottom: 2px solid #dcdcdc;
+        display: inline-block;
+        padding-bottom: 0.4rem;
+      }
+      table {
+        margin: 1rem auto;
+        border-collapse: collapse;
+        width: 95%;
+        max-width: 1000px;
+        background-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
+        font-size: 0.95rem;
+      }
+      th,
+      td {
+        border: 1px solid #e0e0e0;
+        padding: 0.75rem 1rem;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #f5f6fa;
+        color: #2c3e50;
+        font-weight: 600;
+        width: 30%;
+      }
+      tr:nth-child(even) td {
+        background-color: #fafafa;
+      }
+      code {
+        background: #ecf0f1;
+        padding: 2px 4px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+      code.attr {
+        color: #9b59b6;
+      }
+      code.ex {
+        display: block;
+        font-size: 0.85rem;
+        margin-top: 4px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML & CSS Cheatsheet</h1>
+
+    <h2>HTML Basics</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>Element</td>
+        <td>Element = tag open + content + tag close e.g. <code>&lt;p&gt;Hello&lt;/p&gt;</code></td>
+      </tr>
+      <tr>
+        <td>Attribute</td>
+        <td><code>&lt;div class="main"&gt;</code> — <code>class</code> is attribute name, <code>main</code> is its value</td>
+      </tr>
+      <tr>
+        <td>Name attribute</td>
+        <td>Defines property name e.g. width, height, position</td>
+      </tr>
+      <tr>
+        <td>Value attribute</td>
+        <td>Defines value of the attribute e.g. 120px, left</td>
+      </tr>
+      <tr>
+        <td>Comment</td>
+        <td><code>&lt;!-- content --&gt;</code> is used for commenting in HTML</td>
+      </tr>
+      <tr>
+        <td>Link CSS file</td>
+        <td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code> placed in <code>&lt;head&gt;</code></td>
+      </tr>
+      <tr>
+        <td>Element[attribute]</td>
+        <td>CSS selector for element with specific attribute</td>
+      </tr>
+      <tr>
+        <td>Box Model</td>
+        <td>Box = content → padding → border → margin</td>
+      </tr>
+      <tr>
+        <td>Property</td>
+        <td>The style you want to change e.g. <code>background-color</code></td>
+      </tr>
+      <tr>
+        <td>Property Value</td>
+        <td>What you set the property to e.g. <code>red</code></td>
+      </tr>
+      <tr>
+        <td><code>&lt;link rel=&quot;icon&quot; href=&quot;favicon.ico&quot;&gt;</code></td>
+        <td>Specifies the icon shown in browser tab (favicon)</td>
+      </tr>
+    </table>
+
+    <h2>Units</h2>
+    <table>
+      <tr>
+        <th>Unit</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>px</td>
+        <td>1/96 inch ≈ 0.26 mm</td>
+      </tr>
+      <tr>
+        <td>rem</td>
+        <td>Relative to root element font-size (default 16px)</td>
+      </tr>
+      <tr>
+        <td>em</td>
+        <td>Relative to parent element font-size</td>
+      </tr>
+      <tr>
+        <td>RGB</td>
+        <td><code>rgb(0,0,205,0.8)</code> — last value is alpha (opacity)</td>
+      </tr>
+      <tr>
+        <td>Hexadecimal</td>
+        <td><code>#970515</code> is a hex color code</td>
+      </tr>
+      <tr>
+        <td><code>&amp;nbsp;</code></td>
+        <td>Non-breaking space in HTML</td>
+      </tr>
+    </table>
+
+    <h2>Flexbox Basics</h2>
+    <table>
+      <tr>
+        <th>Concept</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>display: flex</td>
+        <td>Makes an element a flex container</td>
+      </tr>
+      <tr>
+        <td>Item shrink</td>
+        <td>If container space < items, items shrink</td>
+      </tr>
+      <tr>
+        <td>Item expand</td>
+        <td>If container space > items, items keep size</td>
+      </tr>
+      <tr>
+        <td>Main-axis</td>
+        <td>Default: horizontal (row), can be set</td>
+      </tr>
+      <tr>
+        <td>Cross-axis</td>
+        <td>Perpendicular to main-axis</td>
+      </tr>
+    </table>
+
+    <h2>HTML Tags Reference</h2>
+    <table>
+      <tr>
+        <th>Tag</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>&lt;!DOCTYPE html&gt;</code></td>
+        <td>Defines HTML version</td>
+      </tr>
+      <tr>
+        <td><code>&lt;html&gt;</code></td>
+        <td>Root HTML tag</td>
+      </tr>
+      <tr>
+        <td><code>&lt;head&gt;</code></td>
+        <td>Metadata and styles/scripts</td>
+      </tr>
+      <tr>
+        <td><code>&lt;meta charset="utf-8"&gt;</code></td>
+        <td>Defines character encoding</td>
+      </tr>
+      <tr>
+        <td><code>&lt;title&gt;</code></td>
+        <td>Defines page title (seen in browser tab)</td>
+      </tr>
+      <tr>
+        <td><code>&lt;body&gt;</code></td>
+        <td>Main visible page content</td>
+      </tr>
+      <tr>
+        <td><code>&lt;h1&gt;-&lt;h6&gt;</code></td>
+        <td>Header tags from largest to smallest</td>
+      </tr>
+      <tr>
+        <td><code>&lt;p&gt;</code></td>
+        <td>Paragraph</td>
+      </tr>
+      <tr>
+        <td><code>&lt;div&gt;</code></td>
+        <td>Block-level container</td>
+      </tr>
+      <tr>
+        <td><code>&lt;span&gt;</code></td>
+        <td>Inline container</td>
+      </tr>
+      <tr>
+        <td><code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code></td>
+        <td>Line break / horizontal rule</td>
+      </tr>
+      <tr>
+        <td><code>&lt;i&gt;</code>, <code>&lt;em&gt;</code></td>
+        <td>Italic text</td>
+      </tr>
+      <tr>
+        <td><code>&lt;b&gt;</code>, <code>&lt;strong&gt;</code></td>
+        <td>Bold text</td>
+      </tr>
+      <tr>
+        <td><code>&lt;mark&gt;</code></td>
+        <td>Highlight text</td>
+      </tr>
+      <tr>
+        <td><code>&lt;small&gt;</code></td>
+        <td>Smaller text</td>
+      </tr>
+      <tr>
+        <td><code>&lt;del&gt;</code></td>
+        <td>Strikethrough</td>
+      </tr>
+      <tr>
+        <td><code>&lt;ins&gt;</code></td>
+        <td>Inserted text (underline)</td>
+      </tr>
+      <tr>
+        <td><code>&lt;sub&gt;</code>, <code>&lt;sup&gt;</code></td>
+        <td>Subscript / Superscript</td>
+      </tr>
+      <tr>
+        <td><code>&lt;sup&gt;</code></td>
+        <td>Displays superscript text (above baseline)</td>
+      </tr>
+      <tr>
+        <td><code>&lt;a&gt;content&lt;/a&gt;</code></td>
+        <td>Defines a hyperlink</td>
+      </tr>
+      <tr>
+        <td><code class="attr">href="https://www.google.com"</code></td>
+        <td>Specifies the link target (e.g. Google)</td>
+      </tr>
+      <tr>
+        <td><code class="attr">target="_blank"</code></td>
+        <td>Opens link in a new tab</td>
+      </tr>
+      <tr>
+        <td><code>&lt;img /&gt;</code></td>
+        <td>Embeds an image into the page</td>
+      </tr>
+      <tr>
+        <td><code class="attr">src="image.jpg"</code></td>
+        <td>Specifies image source URL</td>
+      </tr>
+      <tr>
+        <td><code class="attr">alt="description"</code></td>
+        <td>Alternative text if image fails to load</td>
+      </tr>
+      <tr>
+        <td><code class="attr">width="a"</code></td>
+        <td>Sets element width in px, %, etc.</td>
+      </tr>
+      <tr>
+        <td><code class="attr">height="a"</code></td>
+        <td>Sets element height, e.g. <code>height: 100vh</code> for full viewport</td>
+      </tr>
+      <tr>
+        <td><code>&lt;style&gt;</code></td>
+        <td>Used to write CSS inside <code>&lt;head&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>&lt;section&gt;</code></td>
+        <td>Semantic section in HTML5</td>
+      </tr>
+    </table>
+    <h2>Table Elements</h2>
+    <table>
+      <tr>
+        <th>Tag or Attribute</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>&lt;table&gt;</code></td>
+        <td>Defines a table structure</td>
+      </tr>
+      <tr>
+        <td><code>align="center"</code></td>
+        <td>Aligns table/image content</td>
+      </tr>
+      <tr>
+        <td><code>&lt;thead&gt;</code></td>
+        <td>Groups the header content in a table</td>
+      </tr>
+      <tr>
+        <td><code>&lt;tbody&gt;</code></td>
+        <td>Groups the body content in a table</td>
+      </tr>
+      <tr>
+        <td><code>&lt;tfoot&gt;</code></td>
+        <td>Groups the footer content in a table</td>
+      </tr>
+      <tr>
+        <td><code>&lt;tr&gt;</code></td>
+        <td>Defines a row in a table</td>
+      </tr>
+      <tr>
+        <td><code>&lt;th&gt;</code></td>
+        <td>Defines a header cell in a table</td>
+      </tr>
+      <tr>
+        <td><code>&lt;td&gt;</code></td>
+        <td>Defines a standard data cell in a table</td>
+      </tr>
+      <tr>
+        <td><code class="attr">colspan="a"</code></td>
+        <td>Merges a number of columns in a table</td>
+      </tr>
+      <tr>
+        <td><code class="attr">rowspan="a"</code></td>
+        <td>Merges a number of rows in a table</td>
+      </tr>
+    </table>
+    <h2>Form Elements</h2>
+    <table>
+      <tr>
+        <th>Tag or Attribute</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>&lt;ol&gt;</code></td>
+        <td>Defines an ordered list (e.g. 1, 2, 3)</td>
+      </tr>
+      <tr>
+        <td><code>&lt;ul&gt;</code></td>
+        <td>Defines an unordered list (e.g. bullet points)</td>
+      </tr>
+      <tr>
+        <td><code>&lt;li&gt;</code></td>
+        <td>Defines a list item inside &lt;ol&gt; or &lt;ul&gt;</td>
+      </tr>
+      <tr>
+        <td><code>&lt;form&gt;</code></td>
+        <td>Container for form controls</td>
+      </tr>
+      <tr>
+        <td><code>&lt;label&gt;</code></td>
+        <td>Defines a label for a form input</td>
+      </tr>
+      <tr>
+        <td><code>&lt;input /&gt;</code></td>
+        <td>Defines a general input field; use <code>type</code> attribute to specify</td>
+      </tr>
+      <tr>
+        <td><code class="attr">&lt;type="text"&gt;</code></td>
+        <td>Text field</td>
+      </tr>
+      <tr>
+        <td><code class="attr">name="content"</code></td>
+        <td>Name used for the input field in submission</td>
+      </tr>
+      <tr>
+        <td><code class="attr">type="number"</code></td>
+        <td>Numeric input</td>
+      </tr>
+      <tr>
+        <td><code class="attr">type="range"</code></td>
+        <td>Slider input</td>
+      </tr>
+      <tr>
+        <td><code>min="" max=""</code></td>
+        <td>Minimum and maximum values</td>
+      </tr>
+      <tr>
+        <td><code class="attr">step=""</code></td>
+        <td>Step size between values</td>
+      </tr>
+      <tr>
+        <td><code class="attr">type="radio"</code></td>
+        <td>Radio button (select one only)</td>
+      </tr>
+      <tr>
+        <td><code class="attr">type="checkbox"</code></td>
+        <td>Checkbox (multiple selections)</td>
+      </tr>
+      <tr>
+        <td><code class="attr">type="date"</code></td>
+        <td>Date picker</td>
+      </tr>
+      <tr>
+        <td><code class="attr">type="password"</code></td>
+        <td>Hides input with asterisks</td>
+      </tr>
+      <tr>
+        <td><code class="attr">type="reset"</code></td>
+        <td>Resets all form fields</td>
+      </tr>
+      <tr>
+        <td><code class="attr">type="submit"</code></td>
+        <td>Submits the form</td>
+      </tr>
+      <tr>
+        <td><code>&lt;select&gt;</code></td>
+        <td>Creates a dropdown menu</td>
+      </tr>
+      <tr>
+        <td><code>&lt;option&gt;</code></td>
+        <td>Option inside a <code>&lt;select&gt;</code></td>
+      </tr>
+      <tr>
+        <td><code>&lt;datalist&gt;</code></td>
+        <td>Defines suggestions for input</td>
+      </tr>
+      <tr>
+        <td><code class="attr">&lt;list="id"&gt;</code></td>
+        <td>Associates with tag input with datalist</td>
+      </tr>
+      <tr>
+        <td><code>&lt;textarea&gt;</code></td>
+        <td>Multiline text input</td>
+      </tr>
+      <tr>
+        <td><code>&lt;button&gt;</code></td>
+        <td>Defines a clickable button</td>
+      </tr>
+      <tr>
+        <td><code class="attr">form="formId"</code></td>
+        <td>Associates input/button with specific form</td>
+      </tr>
+    </table>
+    <h2>CSS Properties</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td><code class="attr">color:</code></td>
+        <td>Change text color<br /><code class="ex">color: pink;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">font-size:</code></td>
+        <td>Text size<br /><code class="ex">font-size: 18px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">font-family:</code></td>
+        <td>Font type<br /><code class="ex">font-family: Arial, sans-serif;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">font-weight:</code></td>
+        <td>Font thickness<br /><code class="ex">font-weight: bold;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">font-style:</code></td>
+        <td>Italic or normal<br /><code class="ex">font-style: italic;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">font:</code></td>
+        <td>Shorthand font settings<br /><code class="ex">font: italic bold 16px/1.4 Arial;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">background-color:</code></td>
+        <td>Background color<br /><code class="ex">background-color: #f0f0f0;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">text-align:</code></td>
+        <td>Align text<br /><code class="ex">text-align: center;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">text-align-last:</code></td>
+        <td>Align last line<br /><code class="ex">text-align-last: right;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">text-decoration:</code></td>
+        <td>Underline or none<br /><code class="ex">text-decoration: underline;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">text-transform:</code></td>
+        <td>Uppercase/lowercase<br /><code class="ex">text-transform: capitalize;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">line-height:</code></td>
+        <td>Spacing between lines<br /><code class="ex">line-height: 1.6;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">letter-spacing:</code></td>
+        <td>Space between letters<br /><code class="ex">letter-spacing: 2px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">background-image:</code></td>
+        <td>Set background picture<br /><code class="ex">background-image: url("pic.jpg");</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">background-repeat:</code></td>
+        <td>Repeat bg image<br /><code class="ex">background-repeat: repeat-x;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">background-size:</code></td>
+        <td>Resize background<br /><code class="ex">background-size: cover;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">background-position:</code></td>
+        <td>Bg image position<br /><code class="ex">background-position: center top;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">background-attachment:</code></td>
+        <td>Scroll or fixed<br /><code class="ex">background-attachment: fixed;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">cursor:</code></td>
+        <td>Mouse pointer type<br /><code class="ex">cursor: pointer;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">box-shadow:</code></td>
+        <td>Shadow for box<br /><code class="ex">box-shadow: 5px 10px 20px red;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">visibility:</code></td>
+        <td>Show or hide element<br /><code class="ex">visibility: hidden;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">box-sizing:</code></td>
+        <td>Include padding and border in width/height<br /><code class="ex">* { box-sizing: border-box; }</code></td>
+      </tr>
+    </table>
+    <h2>Layout</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td><code class="attr">height:</code></td>
+        <td>Element height<br /><code class="ex">height: 100px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">width:</code></td>
+        <td>Element width<br /><code class="ex">width: 100px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">border:</code></td>
+        <td>Border line<br /><code class="ex">border: 3px solid red;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">outline:</code></td>
+        <td>Outer border<br /><code class="ex">outline: green solid 5px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">border-radius:</code></td>
+        <td>Round corner<br /><code class="ex">border-radius: 20px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">padding:</code></td>
+        <td>Space inside border<br /><code class="ex">padding: 30px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">margin:</code></td>
+        <td>Space outside border<br /><code class="ex">margin: 30px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">min-width / max-width:</code></td>
+        <td>Responsive width<br /><code class="ex">min-width: 100px; max-width: 500px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">overflow:</code></td>
+        <td>Control overflow<br /><code class="ex">overflow: scroll;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">position:</code></td>
+        <td>
+          Defines how element is positioned in the document<br />
+          <code class="ex">position: static; <br />// default, normal flow</code>
+          <code class="ex">position: relative; <br />// use with top/left to offset from normal</code>
+          <code class="ex">position: fixed; <br />// fixed to viewport (e.g. top: 0;)</code>
+          <code class="ex">position: absolute; <br />// relative to nearest positioned parent</code>
+          <code class="ex">position: sticky; <br />// relative until scroll, then fixed</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code class="attr">z-index:</code></td>
+        <td>Layer level<br /><code class="ex">z-index: 10;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">!important</code></td>
+        <td>Force override<br /><code class="ex">color: red !important;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">opacity:</code></td>
+        <td>Transparency<br /><code class="ex">opacity: 0.8;</code></td>
+      </tr>
+    </table>
+    <h2>Responsive Design with Media Queries</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td><code class="attr">@media</code></td>
+        <td>Apply styles depending on device screen conditions<br /><code class="ex">@media (max-width: 600px) { body { font-size: 14px; } }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">@media (width: 500px)</code></td>
+        <td>Exact match condition<br /><code class="ex">@media (width: 500px) { h1 { color: green; } }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">@media (min-width: 768px)</code></td>
+        <td>Apply if viewport width ≥ 768px<br /><code class="ex">@media (min-width: 768px) { .box { padding: 2rem; } }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">@media (max-width: 480px)</code></td>
+        <td>Apply if viewport width ≤ 480px<br /><code class="ex">@media (max-width: 480px) { nav { display: none; } }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">@media (min-width: 400px) and (max-width: 800px)</code></td>
+        <td>Apply for mid-range screen sizes<br /><code class="ex">@media (min-width: 400px) and (max-width: 800px) { p { color: orange; } }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">@media (orientation: landscape)</code></td>
+        <td>Apply when screen is rotated horizontally<br /><code class="ex">@media (orientation: landscape) { body { background: lightblue; } }</code></td>
+      </tr>
+    </table>
+    <h2>Animation</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td><code class="attr">transform:</code></td>
+        <td>Move/rotate/scale<br /><code class="ex">transform: scale(1.2);</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">transition-property:</code></td>
+        <td>CSS transition prop<br /><code class="ex">transition-property: all;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">transition-duration:</code></td>
+        <td>Transition time<br /><code class="ex">transition-duration: 2s;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">transition-delay:</code></td>
+        <td>Delay before start<br /><code class="ex">transition-delay: 0.5s;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">transition-timing-function:</code></td>
+        <td>Speed curve<br /><code class="ex">transition-timing-function: ease-in-out;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">@keyframes</code></td>
+        <td>Define animation steps<br /><code class="ex">@keyframes move { from {left: 0;} to {left: 200px;} }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">animation</code></td>
+        <td>Shorthand animation<br /><code class="ex">animation: move 3s ease-in-out 1s infinite alternate;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">animation-name:</code></td>
+        <td>Reference @keyframes<br /><code class="ex">animation-name: move;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">animation-duration:</code></td>
+        <td>Duration time<br /><code class="ex">animation-duration: 2s;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">animation-delay:</code></td>
+        <td>Delay before animation starts<br /><code class="ex">animation-delay: 1s;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">animation-iteration-count:</code></td>
+        <td>Repeat times<br /><code class="ex">animation-iteration-count: infinite;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">animation-direction:</code></td>
+        <td>Direction of repeat<br /><code class="ex">animation-direction: alternate;</code></td>
+      </tr>
+    </table>
+    <h2>Flexbox</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td><code class="attr">display: flex;</code></td>
+        <td>Make container a flexbox, enables all child elements to use flex behavior<br /><code class="ex">.container { display: flex; }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">display: inline-flex;</code></td>
+        <td>Like flex but stays inline (does not break line)<br /><code class="ex">.container { display: inline-flex; }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">flex-direction:</code></td>
+        <td>Defines direction of children<br /><code class="ex">row | column | row-reverse | column-reverse</code><br /><code class="ex">flex-direction: row;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">justify-content:</code></td>
+        <td>Horizontal alignment along main axis<br /><code class="ex">flex-start | flex-end | center | space-between | space-around | space-evenly</code><br /><code class="ex">justify-content: space-between;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">align-items:</code></td>
+        <td>Vertical alignment along cross axis (for single row)<br /><code class="ex">stretch | flex-start | center | flex-end | baseline</code><br /><code class="ex">align-items: center;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">align-content:</code></td>
+        <td>Vertical alignment of multi-line (wrap) rows<br /><code class="ex">stretch | flex-start | center | flex-end | space-between | space-around</code><br /><code class="ex">align-content: space-around;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">align-self:</code></td>
+        <td>Override vertical align for specific item<br /><code class="ex">align-self: flex-end;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">flex-wrap:</code></td>
+        <td>Allow wrapping items when overflow<br /><code class="ex">nowrap (default) | wrap | wrap-reverse</code><br /><code class="ex">flex-wrap: wrap;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">flex-grow:</code></td>
+        <td>Ratio to grow extra space<br /><code class="ex">flex-grow: 2; /* grows twice as fast */</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">flex-shrink:</code></td>
+        <td>Ratio to shrink space if overflow<br /><code class="ex">flex-shrink: 0; /* no shrink */</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">flex-basis:</code></td>
+        <td>Initial main size before grow/shrink<br /><code class="ex">flex-basis: 200px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">flex:</code></td>
+        <td>Shorthand: grow shrink basis<br /><code class="ex">flex: 1 1 200px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">order:</code></td>
+        <td>Change visual order (default = 0)<br /><code class="ex">order: -1;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">flex-flow:</code></td>
+        <td>Shorthand: direction + wrap<br /><code class="ex">flex-flow: row wrap;</code></td>
+      </tr>
+    </table>
+
+    <h2>Flexbox Playground / Practice</h2>
+    <ul>
+      <li>Try it at <a href="https://codepip.com/games/flexbox-froggy/" target="_blank">Flexbox Froggy</a></li>
+      <li>Try grid at <a href="https://codepip.com/games/grid-garden/" target="_blank">Grid Garden</a></li>
+    </ul>
+  </body>
+</html>
