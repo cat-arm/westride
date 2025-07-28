@@ -53,7 +53,10 @@
         background-color: #f5f6fa;
         color: #2c3e50;
         font-weight: 600;
-        width: 30%;
+        width: 22%;
+      }
+      td:nth-child(2) {
+        width: 78%;
       }
       tr:nth-child(even) td {
         background-color: #fafafa;
@@ -67,17 +70,31 @@
       code.attr {
         color: #9b59b6;
       }
+      code.tag {
+        color: #2980b9;
+        font-weight: bold;
+      }
+      code.psedo {
+        color: #d35400;
+        font-weight: bold;
+      }
+      code.keyword {
+        color: #27ae60;
+        font-weight: bold;
+      }
       code.ex {
         display: block;
         font-size: 0.85rem;
         margin-top: 4px;
         color: #555;
       }
+      .selectors-title {
+        margin-top: 4rem;
+      }
     </style>
   </head>
   <body>
-    <h1>HTML & CSS Cheatsheet</h1>
-
+    <h1>HTML Cheatsheet</h1>
     <h2>HTML Basics</h2>
     <table>
       <tr>
@@ -127,6 +144,20 @@
       <tr>
         <td><code>&lt;link rel=&quot;icon&quot; href=&quot;favicon.ico&quot;&gt;</code></td>
         <td>Specifies the icon shown in browser tab (favicon)</td>
+      </tr>
+      <tr>
+        <td><code class="attr">margin-inline-start</code></td>
+        <td>
+          Margin on the start side (left in LTR, right in RTL)<br />
+          <code class="ex">margin-inline-start: 1rem;</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code class="attr">padding-block</code></td>
+        <td>
+          Padding on both top and bottom sides<br />
+          <code class="ex">padding-block: 2rem;</code>
+        </td>
       </tr>
     </table>
 
@@ -312,6 +343,14 @@
         <td><code>&lt;section&gt;</code></td>
         <td>Semantic section in HTML5</td>
       </tr>
+      <tr>
+        <td><code class="tag">&lt;main&gt;, &lt;aside&gt;, &lt;article&gt;, &lt;nav&gt;</code></td>
+        <td>Semantic HTML5 tags that improve document structure, SEO, and accessibility</td>
+      </tr>
+      <tr>
+        <td><code class="attr">role="button"</code>, <code class="attr">aria-label="Label"</code></td>
+        <td>ARIA attributes help screen readers interpret the element properly</td>
+      </tr>
     </table>
     <h2>Table Elements</h2>
     <table>
@@ -467,6 +506,7 @@
         <td>Associates input/button with specific form</td>
       </tr>
     </table>
+    <h1 class="selectors-title">CSS Cheatsheet</h1>
     <h2>CSS Properties</h2>
     <table>
       <tr>
@@ -562,7 +602,7 @@
         <td>Include padding and border in width/height<br /><code class="ex">* { box-sizing: border-box; }</code></td>
       </tr>
     </table>
-    <h2>Layout</h2>
+    <h2>Layout & Position Enhancements</h2>
     <table>
       <tr>
         <th>Name</th>
@@ -627,6 +667,50 @@
         <td><code class="attr">opacity:</code></td>
         <td>Transparency<br /><code class="ex">opacity: 0.8;</code></td>
       </tr>
+      <tr>
+        <td><code class="attr">inset:</code></td>
+        <td>Shorthand for top, right, bottom, and left<br /><code class="ex">inset: 0;</code> = top: 0; right: 0; bottom: 0; left: 0;</td>
+      </tr>
+      <tr>
+        <td><code class="attr">isolation: isolate;</code></td>
+        <td>Creates a new stacking context to isolate z-index layers<br /><code class="ex">.modal { isolation: isolate; }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">--primary-color: #3498db;</code></td>
+        <td>Define a reusable custom property<br /><code class="ex">color: var(--primary-color);</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">@container</code></td>
+        <td>
+          Query based on parent container size<br />
+          <code class="ex">@container (min-width: 400px) { ... }</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code class="attr">container-type</code></td>
+        <td>
+          Enables container query on an element<br />
+          <code class="ex">container-type: inline-size;</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code class="attr">scroll-behavior: smooth;</code></td>
+        <td>Enables smooth scrolling on anchor navigation<br /><code class="ex">html { scroll-behavior: smooth; }</code></td>
+      </tr>
+      <tr>
+        <td><code class="psedo">::-webkit-scrollbar</code></td>
+        <td>Customize scrollbars (Chrome/Edge/Safari only)</td>
+      </tr>
+      <tr>
+        <td><code class="attr">@layer</code></td>
+        <td>
+          Controls the order of CSS application<br />
+          <code class="ex">
+            @layer reset, base, components;<br />
+            @layer base { h1 { color: black; } }
+          </code>
+        </td>
+      </tr>
     </table>
     <h2>Responsive Design with Media Queries</h2>
     <table>
@@ -657,6 +741,14 @@
       <tr>
         <td><code class="attr">@media (orientation: landscape)</code></td>
         <td>Apply when screen is rotated horizontally<br /><code class="ex">@media (orientation: landscape) { body { background: lightblue; } }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">@media (prefers-color-scheme: dark)</code></td>
+        <td>Applies styles when user prefers dark theme<br /><code class="ex">@media (prefers-color-scheme: dark) { body { background: #111; color: #fff; } }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">clamp(min, preferred, max)</code></td>
+        <td>Scales font-size within a range<br /><code class="ex">font-size: clamp(1rem, 2vw, 1.5rem);</code></td>
       </tr>
     </table>
     <h2>Animation</h2>
@@ -712,6 +804,10 @@
       <tr>
         <td><code class="attr">animation-direction:</code></td>
         <td>Direction of repeat<br /><code class="ex">animation-direction: alternate;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">will-change: transform;</code></td>
+        <td>Hints browser to optimize animation performance for the property<br /><code class="ex">.card:hover { will-change: transform; }</code></td>
       </tr>
     </table>
     <h2>Flexbox</h2>
@@ -781,7 +877,367 @@
     <h2>Flexbox Playground / Practice</h2>
     <ul>
       <li>Try it at <a href="https://codepip.com/games/flexbox-froggy/" target="_blank">Flexbox Froggy</a></li>
-      <li>Try grid at <a href="https://codepip.com/games/grid-garden/" target="_blank">Grid Garden</a></li>
     </ul>
+    <h2>Grid</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>Grid container</td>
+        <td>The element with <code class="ex">display: grid;</code> that holds all grid items</td>
+      </tr>
+      <tr>
+        <td>Grid cell</td>
+        <td>Each individual item in the grid layout</td>
+      </tr>
+      <tr>
+        <td>Grid column / row</td>
+        <td>Vertical or horizontal lines of cells; e.g., 3 columns × 4 rows = 12 cells</td>
+      </tr>
+      <tr>
+        <td>Grid line</td>
+        <td>The boundary line between rows and columns, numbered from 1</td>
+      </tr>
+      <tr>
+        <td>Grid area</td>
+        <td>A rectangular block covering multiple grid cells; e.g., 2x2 spans 4 cells</td>
+      </tr>
+      <tr>
+        <td>Gap / Gutter</td>
+        <td>Spacing between rows or columns; set via <code class="ex">gap: 10px;</code></td>
+      </tr>
+      <tr>
+        <td>Justify vs Align</td>
+        <td><strong>Justify</strong> aligns along horizontal (row/X axis), <strong>Align</strong> aligns along vertical (column/Y axis)</td>
+      </tr>
+      <tr>
+        <td>Line Reference</td>
+        <td>
+          Grid lines can be referenced by number:<br />
+          <code class="ex">R1\C1 C2 C3 C4</code><br />
+          <code class="ex">R2</code><br />
+          <code class="ex">R3</code><br />
+          You can inspect lines in DevTools → Layout → Show line numbers.
+        </td>
+      </tr>
+    </table>
+    <h2>Grid Properties</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td><code class="attr">display: grid;</code></td>
+        <td>Defines a grid container that enables use of all grid properties.<br /><code class="ex">.container { display: grid; }</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">grid-template-columns:</code></td>
+        <td>Specifies column structure.<br />Use px, %, fr, or repeat().<br /><code class="ex">grid-template-columns: 200px 1fr;</code><code class="ex">grid-template-columns: repeat(3, 1fr);</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">grid-template-rows:</code></td>
+        <td>Specifies row structure.<br /><code class="ex">grid-template-rows: 100px auto;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">grid-template:</code></td>
+        <td>Shorthand for grid-template-rows / columns<br /><code class="ex">grid-template: 50px auto / 1fr 2fr;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">grid-template-areas:</code></td>
+        <td>Define named layout zones.<br /><code class="ex">grid-template-areas: 'nav nav' 'side main';</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">grid-area:</code></td>
+        <td>
+          Assigns element to a named area or grid lines.<br />
+          Can be used as:
+          <code class="ex">grid-area: header;</code> (matches named grid-template-areas)<br />
+          Or as shorthand for:
+          <code class="ex">grid-area: row-start / col-start / row-end / col-end;</code>
+          <code class="ex">grid-area: 1 / 1 / 3 / 6;</code>
+          <br />Also lets you reorder or override layout from source order. <br />Default order = 0, you can use <code>order</code> to control priority.
+        </td>
+      </tr>
+      <tr>
+        <td><code class="attr">grid-column:</code></td>
+        <td>Shorthand for column start / end<br /><code class="ex">grid-column: 2 / 4;</code><code class="ex">grid-column: 1 / span 2;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">grid-row:</code></td>
+        <td>Shorthand for row start / end<br /><code class="ex">grid-row: 1 / 3;</code><code class="ex">grid-row: 2 / span 2;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">gap:</code></td>
+        <td>Shorthand for row-gap and column-gap<br /><code class="ex">gap: 10px 20px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">row-gap:</code></td>
+        <td>Sets spacing between grid rows<br /><code class="ex">row-gap: 20px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">column-gap:</code></td>
+        <td>Sets spacing between grid columns<br /><code class="ex">column-gap: 20px;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">grid-auto-flow:</code></td>
+        <td>Controls auto placement direction of grid items<br /><code class="ex">grid-auto-flow: row;</code><code class="ex">grid-auto-flow: column;</code><code class="ex">grid-auto-flow: row dense;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">justify-content:</code></td>
+        <td>Align whole grid horizontally inside container<br /><code class="ex">justify-content: center;</code><code class="ex">justify-content: space-between;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">align-content:</code></td>
+        <td>Align whole grid vertically inside container<br /><code class="ex">align-content: flex-end;</code><code class="ex">align-content: space-around;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">justify-items:</code></td>
+        <td>Align items inside their cells horizontally<br /><code class="ex">justify-items: start;</code><code class="ex">justify-items: center;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">align-items:</code></td>
+        <td>Align items inside their cells vertically<br /><code class="ex">align-items: stretch;</code><code class="ex">align-items: baseline;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">justify-self:</code></td>
+        <td>Align an individual item horizontally<br /><code class="ex">justify-self: end;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">align-self:</code></td>
+        <td>Align an individual item vertically<br /><code class="ex">align-self: center;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">place-items:</code></td>
+        <td>Shorthand for align-items + justify-items<br /><code class="ex">place-items: center end;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">place-self:</code></td>
+        <td>Shorthand for align-self + justify-self<br /><code class="ex">place-self: start stretch;</code></td>
+      </tr>
+      <tr>
+        <td><code class="attr">padding-inline:</code></td>
+        <td>Horizontal padding on both left & right<br /><code class="ex">padding-inline: 2rem;</code></td>
+      </tr>
+    </table>
+    <h2>Grid Games</h2>
+    <ul>
+      <li><a href="https://codepip.com/games/grid-garden/" target="_blank">Play Grid Garden</a></li>
+      <li><a href="https://cssgridgarden.com/" target="_blank">Grid Layout Visualizer</a></li>
+    </ul>
+    <h1 class="selectors-title">Selectors Cheatsheet</h1>
+    <h2>Tag Selectors</h2>
+    <table>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>div</code></td>
+        <td>Selects all <code>&lt;div&gt;</code> elements</td>
+      </tr>
+      <tr>
+        <td><code>h1, h2, p</code></td>
+        <td>Selects all <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, and <code>&lt;p&gt;</code> elements</td>
+      </tr>
+      <tr>
+        <td><code>*</code></td>
+        <td>Selects all elements</td>
+      </tr>
+    </table>
+
+    <h2>ID & Class Selectors</h2>
+    <table>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>#id</code></td>
+        <td>Select element with id="id"</td>
+      </tr>
+      <tr>
+        <td><code>.classname</code></td>
+        <td>Select elements with class="classname"</td>
+      </tr>
+      <tr>
+        <td><code>tag.class</code></td>
+        <td>Select tag with specific class</td>
+      </tr>
+      <tr>
+        <td><code>#id.class</code></td>
+        <td>Select element with both id and class</td>
+      </tr>
+    </table>
+
+    <h2>Combinators</h2>
+    <table>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>A B</code></td>
+        <td>Select all B inside A (descendant)</td>
+      </tr>
+      <tr>
+        <td><code>A > B</code></td>
+        <td>Select B that is direct child of A</td>
+      </tr>
+      <tr>
+        <td><code>A + B</code></td>
+        <td>Select B that directly follows A (adjacent sibling)</td>
+      </tr>
+      <tr>
+        <td><code>A ~ B</code></td>
+        <td>Select all B siblings after A (general sibling)</td>
+      </tr>
+      <tr>
+        <td><code>A, B</code></td>
+        <td>Select all A and B elements</td>
+      </tr>
+    </table>
+
+    <h2>Attribute Selectors</h2>
+    <table>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>[attribute]</code></td>
+        <td>Has given attribute</td>
+      </tr>
+      <tr>
+        <td><code>a[attribute]</code></td>
+        <td>Selects <code>&lt;A&gt;</code> elements that have the given attribute</td>
+      </tr>
+      <tr>
+        <td><code>[attribute="value"]</code></td>
+        <td>Exact value match</td>
+      </tr>
+      <tr>
+        <td><code>[attribute^="value"]</code></td>
+        <td>Starts with value</td>
+      </tr>
+      <tr>
+        <td><code>[attribute$="value"]</code></td>
+        <td>Ends with value</td>
+      </tr>
+      <tr>
+        <td><code>[attribute*="value"]</code></td>
+        <td>Contains value</td>
+      </tr>
+    </table>
+    <h1 class="selectors-title">Pseudo Cheatsheet</h1>
+    <h2>Pseudo-Classe</h2>
+    <table>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>:first-child</code></td>
+        <td>First child of parent</td>
+      </tr>
+      <tr>
+        <td><code>:last-child</code></td>
+        <td>Last child of parent</td>
+      </tr>
+      <tr>
+        <td><code>:only-child</code></td>
+        <td>The only child</td>
+      </tr>
+      <tr>
+        <td><code>:nth-child(n)</code></td>
+        <td>Nth child (1-based index)</td>
+      </tr>
+      <tr>
+        <td><code>:nth-last-child(n)</code></td>
+        <td>Nth from last</td>
+      </tr>
+      <tr>
+        <td><code>:first-of-type</code></td>
+        <td>First of that tag type</td>
+      </tr>
+      <tr>
+        <td><code>:last-of-type</code></td>
+        <td>Last of that tag type</td>
+      </tr>
+      <tr>
+        <td><code>:only-of-type</code></td>
+        <td>Only of that tag type</td>
+      </tr>
+      <tr>
+        <td><code>:nth-of-type(n)</code></td>
+        <td>Nth tag of that type</td>
+      </tr>
+      <tr>
+        <td><code>:nth-last-of-type(n)</code></td>
+        <td>Nth from end of tag type</td>
+      </tr>
+      <tr>
+        <td><code>:not(selector)</code></td>
+        <td>Exclude selector</td>
+      </tr>
+      <tr>
+        <td><code>:empty</code></td>
+        <td>No content</td>
+      </tr>
+      <tr>
+        <td><code>:hover</code></td>
+        <td>Mouse hover</td>
+      </tr>
+      <tr>
+        <td><code>:active</code></td>
+        <td>Active (click)</td>
+      </tr>
+      <tr>
+        <td><code>:focus</code></td>
+        <td>Focused element (e.g. form field)</td>
+      </tr>
+      <tr>
+        <td><code>:link</code></td>
+        <td>Unvisited link</td>
+      </tr>
+      <tr>
+        <td><code>:visited</code></td>
+        <td>Visited link</td>
+      </tr>
+    </table>
+
+    <h2>Pseudo-Elements</h2>
+    <table>
+      <tr>
+        <th>Selector</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>::before</code></td>
+        <td>Insert content before element</td>
+      </tr>
+      <tr>
+        <td><code>::after</code></td>
+        <td>Insert content after element</td>
+      </tr>
+      <tr>
+        <td><code>::first-letter</code></td>
+        <td>Style first letter</td>
+      </tr>
+      <tr>
+        <td><code>::first-line</code></td>
+        <td>Style first line</td>
+      </tr>
+      <tr>
+        <td><code>::selection</code></td>
+        <td>Highlight text when selected</td>
+      </tr>
+      <tr>
+        <td><code>::marker</code></td>
+        <td>Customize list markers</td>
+      </tr>
+    </table>
   </body>
 </html>
